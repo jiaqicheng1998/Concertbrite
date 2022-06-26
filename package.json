@@ -1,0 +1,26 @@
+{
+  "name": "concertbrite",
+  "version": "1.0.0",
+  "description": "* This is a clone of Eventbrite. * The user can see all the concerts and register for concerts they want to go to. * The scorecard link: https://docs.google.com/spreadsheets/d/1t3ALQ6TqlZq9GcEoZMm92-g6ff3lTu_El4Rll_kO9j4/edit?usp=sharing",
+  "main": "index.js",
+  "scripts": {
+    "heroku-postbuild": "npm run build --prefix frontend",
+    "install": "npm --prefix backend install backend && npm --prefix frontend install frontend",
+    "dev:backend": "npm install --prefix backend start",
+    "dev:frontend": "npm install --prefix frontend start",
+    "sequelize": "npm run --prefix backend sequelize",
+    "sequelize-cli": "npm run --prefix backend sequelize-cli",
+    "start": "npm start --prefix backend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiaqicheng1998/Concertbrite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jiaqicheng1998/Concertbrite/issues"
+  },
+  "homepage": "https://github.com/jiaqicheng1998/Concertbrite#readme"
+}
