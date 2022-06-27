@@ -1,0 +1,52 @@
+nav {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    height: 65px;
+    margin: 0;
+    align-items: center;
+}
+
+.logo {
+    height: 30px;
+}
+
+.logo_container {
+    margin-left: 30px;
+}
+
+.ls_container {
+    display: flex;
+    flex-direction: row;
+}
+
+.signup {
+    padding: 0 20px;
+    height: 65px;
+    text-align: center;
+    line-height: 65px;
+}
+
+.signup:hover {
+    background-color: #f4f4f5;
+}
+
+.signup a {
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    color: #292524;
+}
+
+.login {
+    background-color: white;
+    padding: 0 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #292524;
+    border: none;
+}
+
+.login:hover {
+    background-color: #f4f4f5;
+}
