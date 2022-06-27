@@ -1,0 +1,14 @@
+.image_container {
+    height: 300px;
+    width: 300px;
+    background-position: center center;
+    /* background-repeat: no-repeat; */
+    background-size: auto 100%;
+    border-radius: 10px;
+}
+
+.eventCard {
+    height: 500px;
+    width: 500px;
+    font-family: 'Poppins', sans-serif;
+}
