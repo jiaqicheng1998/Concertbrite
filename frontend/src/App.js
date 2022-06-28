@@ -6,6 +6,7 @@ import Navigation from "./components/Navigation";
 import * as sessionActions from './store/session'
 import EventList from "./components/EventList";
 import SingleEvent from "./components/SingleEvent";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <SingleEvent />
         </Route>
       </Switch>
+      <Footer />
     </>
   )
 }

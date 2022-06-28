@@ -16,6 +16,7 @@
     border: 1px solid #e4e4e7;
     border-radius: 10px;
     margin: 50px auto;
+    margin-bottom: 100px;
 }
 
 .info_container_single {
@@ -118,4 +119,5 @@
 
 .detailed_info_rest_icon i {
     padding:5px 15px;
+    color: #292524;
 }

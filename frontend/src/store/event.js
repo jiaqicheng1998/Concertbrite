@@ -21,8 +21,8 @@ export const addEvent = (event) => {
 //thunk
 export const fetchEvents = () => async (dispatch) => {
     const response = await fetch('/api/events');
-    const articles = await response.json();
-    dispatch(loadEvents(articles));
+    const events = await response.json();
+    dispatch(loadEvents(events));
 };
 
 export const writeEvent = (payload) => async (dispatch) => {
