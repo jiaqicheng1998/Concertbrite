@@ -19,6 +19,9 @@ const validateEvent = [
     check('img_url')
         .exists({ checkFalsy: true })
         .withMessage("Please provide an image"),
+    check('img_url_two')
+        .exists({ checkFalsy: true })
+        .withMessage('Please provide another image'),
     check('location')
         .exists({ checkFalsy: true })
         .withMessage("Please provide a location"),

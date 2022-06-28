@@ -7,6 +7,7 @@ import * as sessionActions from './store/session'
 import EventList from "./components/EventList";
 import SingleEvent from "./components/SingleEvent";
 import Footer from "./components/Footer";
+import NewEvent from "./components/NewEvent";
 
 
 function App() {
@@ -27,6 +28,9 @@ function App() {
         )}
         <Route exact path='/'>
           <EventList />
+        </Route>
+        <Route exact path='/events/new'>
+          <NewEvent />
         </Route>
         <Route exact path='/events/:id'>
           <SingleEvent />
