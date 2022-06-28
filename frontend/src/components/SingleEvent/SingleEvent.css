@@ -1,0 +1,121 @@
+.img_container_single {
+    height: 500px;
+    width: 800px;
+    background-position: center center;
+    background-size: auto 100%;
+    border-top-left-radius: 10px;
+}
+
+.event_container { 
+    display: flex;
+    flex-direction: row;
+}
+
+.single_event {
+    width: 1200px;
+    border: 1px solid #e4e4e7;
+    border-radius: 10px;
+    margin: 50px auto;
+}
+
+.info_container_single {
+    width: 320px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.info_container_single h2 {
+    margin-top: 40px;
+    font-family: 'Poppins', sans-serif;
+    color: #292524;
+    font-size: 1.3rem;
+}
+
+.info_container_single button {
+    position: absolute;
+    top: 550px;
+    background-color:#2563eb;
+    border: none;
+    width: 320px;
+    height: 50px;
+    border-radius: 8px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    box-shadow: 0px 0px 2px 1px rgba(123, 126, 198, 0.3);
+}
+
+.info_container_single button:hover {
+    background-color: #3b82f6;
+}
+
+.detailed_info {
+    display: flex;
+    flex-direction: row;
+}
+
+.detailed_info img {
+    width: 720px;
+}
+
+.detailed_info_main {
+    width: 720px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+#time_single {
+    color: #991b1b;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#location_single {
+    color: #525252;
+    margin-top: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.detailed_info {
+    margin-top: 40px;
+}
+
+.detailed_info p {
+    font-family: 'Poppins', sans-serif;
+    color: #525252;
+    font-size: 1.05rem;
+}
+
+.detailed_info_main h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #292524;
+    font-size: 1.3rem;
+}
+
+.detailed_info_rest h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #292524;
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.detailed_info_rest p {
+    margin-top: 5px;
+}
+
+.detailed_info_rest {
+    width: 300px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.detailed_info_rest_unit {
+    display: flex;
+    flex-direction: row;
+}
+
+.detailed_info_rest_icon i {
+    padding:5px 15px;
+}

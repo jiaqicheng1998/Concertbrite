@@ -4,6 +4,8 @@ import { Route, Switch } from 'react-router-dom';
 import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
 import * as sessionActions from './store/session'
+import EventList from "./components/EventList";
+import SingleEvent from "./components/SingleEvent";
 
 
 function App() {
@@ -16,13 +18,19 @@ function App() {
   return (
     <>
       <Navigation isLoaded={isLoaded} />
-      {isLoaded && (
-        <Switch>
+      <Switch>
+        {isLoaded && (
           <Route path='/signup'>
             <SignupFormPage />
           </Route>
-        </Switch>
-      )}
+        )}
+        <Route exact path='/'>
+          <EventList />
+        </Route>
+        <Route exact path='/events/:id'>
+          <SingleEvent />
+        </Route>
+      </Switch>
     </>
   )
 }
