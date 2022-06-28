@@ -65,3 +65,11 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
+
+a {
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+}
