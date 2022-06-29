@@ -2,11 +2,13 @@ import { useParams } from 'react-router-dom';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchEvents } from '../../store/event';
+import { removeEvent } from '../../store/event';
 import './SingleEvent.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 
 const SingleEvent = () => {
     const dispatch = useDispatch();
+    let history = useHistory();
     useEffect(() => {
         window.scrollTo(0, 0);
         dispatch(fetchEvents());
@@ -17,6 +19,12 @@ const SingleEvent = () => {
 
     const eventId = useParams().id;
     const event = events[eventId];
+
+    const handleClick = () => {
+        dispatch(removeEvent(eventId));
+
+        history.push('/');
+    }
 
     return (
         <div className='single_event'>
@@ -32,7 +40,9 @@ const SingleEvent = () => {
                             <NavLink to={`/events/${eventId}/edit`}>
                                 <i id="edit_event" className="fa-solid fa-pen-to-square" />
                             </NavLink>
-                            <i id="delete_event" className="fa-solid fa-trash-can" />
+                            <span id="delete_event_span" onClick={handleClick}>
+                                <i id="delete_event" className="fa-solid fa-trash-can" />
+                            </span>
                         </div>
                     )}
                     <button>Get Tickets</button>

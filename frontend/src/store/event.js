@@ -2,7 +2,8 @@ import { csrfFetch } from './csrf';
 
 const LOAD_EVENTS = 'events/loadEvents';
 const ADD_EVENT = 'events/addEvent';
-const PUT_EVENT = 'events/putEvent'
+const PUT_EVENT = 'events/putEvent';
+const DELETE_EVENT = 'events/deleteEvent';
 
 //action creators
 export const loadEvents = (events) => {
@@ -23,6 +24,13 @@ export const putEvent = (event) => {
     return {
         type: PUT_EVENT,
         event: event
+    }
+}
+
+export const deleteEvent = (id) => {
+    return {
+        type: DELETE_EVENT,
+        id: id
     }
 }
 
@@ -55,6 +63,16 @@ export const updateEvent = (payload, id) => async (dispatch) => {
     return response;
 }
 
+export const removeEvent = (id) => async (dispatch) => {
+    const response = await csrfFetch(`/api/events/${id}`, {
+        method: 'DELETE'
+    })
+
+    const message = await response.json();
+    dispatch(deleteEvent(id));
+    return message;
+}
+
 //reducer
 const initialState = { entries: {}, isLoading: true };
 
@@ -74,6 +92,10 @@ const eventReducer = (state = initialState, action) => {
             const newState_put = {...state, entries: {...state.entries}};
             newState_put.entries[action.event.id] = action.event;
             return newState_put;
+        case DELETE_EVENT:
+            const entries_to_delete = {...state.entries}
+            delete entries_to_delete[action.id];
+            return {...state, entries: entries_to_delete}
         default: 
             return state;
     }

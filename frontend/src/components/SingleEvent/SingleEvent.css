@@ -1,3 +1,12 @@
+#delete_event_span:hover {
+    cursor: pointer;
+}
+
+#delete_event_span {
+    color: #E4837D;
+}
+
+
 #delete_event {
  padding-left: 20px;
 }

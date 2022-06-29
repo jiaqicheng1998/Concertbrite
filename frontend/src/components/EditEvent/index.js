@@ -2,20 +2,23 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { updateEvent } from '../../store/event';
 import { useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 const EditEvent = () => {
+    let history = useHistory();
     const dispatch = useDispatch();
     const eventId = useParams().id;
+    const events = useSelector(state => state.event.entries)
+    const currentEvent = events[eventId]
 
-    const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
-    const [img_url, setImg_url] = useState('');
-    const [img_url_two, setImg_url_two] = useState('');
-    const [location, setLocation] = useState('');
-    const [time, setTime] = useState('');
+    const [title, setTitle] = useState(currentEvent.title);
+    const [description, setDescription] = useState(currentEvent.description);
+    const [img_url, setImg_url] = useState(currentEvent.img_url);
+    const [img_url_two, setImg_url_two] = useState(currentEvent.img_url_two);
+    const [location, setLocation] = useState(currentEvent.location);
+    const [time, setTime] = useState(currentEvent.time.slice(0, 10));
     const [errors, setErrors] = useState([]);
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -29,24 +32,24 @@ const EditEvent = () => {
             time
         }
 
-        setTitle('');
-        setDescription('');
-        setImg_url('');
-        setImg_url_two('');
-        setLocation('');
-        setTime('');
-
-        return dispatch(updateEvent(newEvent, eventId)).catch(
-            async (res) => {
-                const data = await res.json();
-                if (data && data.errors) {
-                    setErrors(data.errors)
+        const toUpdateEvent = async () => {
+            let res = await dispatch(updateEvent(newEvent, eventId)).catch( //store it in variable
+                async (res) => {
+                    const data = await res.json();
+                    if (data && data.errors) {
+                        setErrors(data.errors)
+                    }
                 }
+            )
+          
+            if(res) {
+              history.push("/")
             }
-        )
+          }
+
+        await toUpdateEvent();
     }
 
-    //cannot redirect
     return (
         <div className='form-container'>
             <form onSubmit={handleSubmit} id="new_event_form">
