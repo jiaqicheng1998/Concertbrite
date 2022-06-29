@@ -1,0 +1,28 @@
+.footer_links {
+    text-align: center;
+}
+
+.footer {
+    background-color: #F8F1F2;
+    margin-bottom: 0px;
+    height: 240px;
+    margin-top: 70px;
+}
+
+.footer_icons i {
+    padding: 30px;
+    padding-top: 80px;
+    color: #E4837D;
+}
+
+.footer_icons {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #E4837D;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 0.95rem;
+}

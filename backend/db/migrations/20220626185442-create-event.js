@@ -20,6 +20,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
+      img_url_two: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
       location: {
         allowNull: false,
         type: Sequelize.STRING(250)

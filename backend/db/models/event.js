@@ -13,6 +13,10 @@ module.exports = (sequelize, DataTypes) => {
       type:DataTypes.STRING,
       allowNull:false
     },
+    img_url_two: {
+      type:DataTypes.STRING,
+      allowNull:false
+    },
     location: {
       type:DataTypes.STRING(250),
       allowNull:false

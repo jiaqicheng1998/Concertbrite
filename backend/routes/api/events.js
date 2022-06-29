@@ -19,6 +19,9 @@ const validateEvent = [
     check('img_url')
         .exists({ checkFalsy: true })
         .withMessage("Please provide an image"),
+    check('img_url_two')
+        .exists({ checkFalsy: true })
+        .withMessage('Please provide another image'),
     check('location')
         .exists({ checkFalsy: true })
         .withMessage("Please provide a location"),
@@ -44,11 +47,12 @@ router.get(`/:id(\\d+)`, asyncHandler(async (req, res) => {
 
 //post a new event, locate user in frontend
 router.post('/', requireAuth, validateEvent, asyncHandler(async (req, res) => {
-    const { title, description, img_url, location, time } = req.body;
+    const { title, description, img_url, img_url_two, location, time } = req.body;
     const newEvent = await Event.create({
         title,
         description,
         img_url,
+        img_url_two,
         location,
         user_id:req.user.id,
         time
@@ -59,12 +63,13 @@ router.post('/', requireAuth, validateEvent, asyncHandler(async (req, res) => {
 //update a new event, locate user in frontend
 router.put(`/:id(\\d+)`, requireAuth, validateEvent, asyncHandler(async (req, res) => {
     const eventId = req.params.id;
-    const { title, description, img_url, location, time } = req.body;
+    const { title, description, img_url, img_url_two, location, time } = req.body;
     const event = await Event.findByPk(eventId);
 
     event.title = title;
     event.description = description;
     event.img_url = img_url;
+    event.img_url_two = img_url_two;
     event.location = location;
     event.time = time;
 

@@ -6,6 +6,8 @@ nav {
     height: 65px;
     margin: 0;
     align-items: center;
+    padding-left: 80px;
+    padding-right: 80px;
 }
 
 .logo {
@@ -26,6 +28,11 @@ nav {
     height: 65px;
     text-align: center;
     line-height: 65px;
+}
+
+.signup a {
+    font-weight: 500;
+    font-size: 1rem;
 }
 
 .signup:hover {

@@ -1,3 +1,20 @@
+#delete_event_span:hover {
+    cursor: pointer;
+}
+
+#delete_event_span {
+    color: #E4837D;
+}
+
+
+#delete_event {
+ padding-left: 20px;
+}
+
+.delete_and_edit {
+    position: absolute;
+}
+
 .img_container_single {
     height: 500px;
     width: 800px;
@@ -16,6 +33,7 @@
     border: 1px solid #e4e4e7;
     border-radius: 10px;
     margin: 50px auto;
+    margin-bottom: 100px;
 }
 
 .info_container_single {
@@ -118,4 +136,5 @@
 
 .detailed_info_rest_icon i {
     padding:5px 15px;
+    color: #292524;
 }
