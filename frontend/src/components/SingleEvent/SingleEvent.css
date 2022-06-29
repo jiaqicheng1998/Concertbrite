@@ -1,3 +1,11 @@
+#delete_event {
+ padding-left: 20px;
+}
+
+.delete_and_edit {
+    position: absolute;
+}
+
 .img_container_single {
     height: 500px;
     width: 800px;

@@ -8,6 +8,7 @@ import EventList from "./components/EventList";
 import SingleEvent from "./components/SingleEvent";
 import Footer from "./components/Footer";
 import NewEvent from "./components/NewEvent";
+import EditEvent from "./components/EditEvent";
 
 
 function App() {
@@ -31,6 +32,9 @@ function App() {
         </Route>
         <Route exact path='/events/new'>
           <NewEvent />
+        </Route>
+        <Route exact path='/events/:id/edit'>
+          <EditEvent />
         </Route>
         <Route exact path='/events/:id'>
           <SingleEvent />

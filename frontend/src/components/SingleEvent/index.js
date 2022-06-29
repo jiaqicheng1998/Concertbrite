@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchEvents } from '../../store/event';
 import './SingleEvent.css';
+import { NavLink } from 'react-router-dom';
 
 const SingleEvent = () => {
     const dispatch = useDispatch();
@@ -12,6 +13,8 @@ const SingleEvent = () => {
     }, []);
 
     const events = useSelector(state => state.event.entries);
+    const user = useSelector(state => state.session.user);
+
     const eventId = useParams().id;
     const event = events[eventId];
 
@@ -24,6 +27,14 @@ const SingleEvent = () => {
                     <h2>{event?.title}</h2>
                     <p id='time_single'>{event?.time.slice(0, 10)}</p>
                     <p id='location_single'>{event?.location}</p>
+                    {user?.id === event?.user_id && (
+                        <div className='delete_and_edit'>
+                            <NavLink to={`/events/${eventId}/edit`}>
+                                <i id="edit_event" className="fa-solid fa-pen-to-square" />
+                            </NavLink>
+                            <i id="delete_event" className="fa-solid fa-trash-can" />
+                        </div>
+                    )}
                     <button>Get Tickets</button>
                 </div>
             </div>
@@ -42,15 +53,15 @@ const SingleEvent = () => {
                     </p>
                     <h2>What is the setlist?</h2>
                     <p>
-                        The setlist for the {event?.title} concert at {event?.location} should 
-                        feature some of the most memorable songs from the artist mixed in with 
-                        some more recent work. The {event?.title} setlist may be slightly different 
+                        The setlist for the {event?.title} concert at {event?.location} should
+                        feature some of the most memorable songs from the artist mixed in with
+                        some more recent work. The {event?.title} setlist may be slightly different
                         than the list of songs performed at other shows.
                     </p>
                     <img src={event?.img_url_two} />
                     <h2> Public Transit</h2>
                     <p>
-                        Public Transit to {event?.location} is preferred. You can choose subway or bus to 
+                        Public Transit to {event?.location} is preferred. You can choose subway or bus to
                         the concert location. NOTICE: please manage your route to the concert arena. I believe you can do that.
                     </p>
                     <h2>If You Drive</h2>

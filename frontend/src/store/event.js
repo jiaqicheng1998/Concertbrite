@@ -2,6 +2,7 @@ import { csrfFetch } from './csrf';
 
 const LOAD_EVENTS = 'events/loadEvents';
 const ADD_EVENT = 'events/addEvent';
+const PUT_EVENT = 'events/putEvent'
 
 //action creators
 export const loadEvents = (events) => {
@@ -14,6 +15,13 @@ export const loadEvents = (events) => {
 export const addEvent = (event) => {
     return {
         type: ADD_EVENT,
+        event: event
+    }
+}
+
+export const putEvent = (event) => {
+    return {
+        type: PUT_EVENT,
         event: event
     }
 }
@@ -36,6 +44,17 @@ export const writeEvent = (payload) => async (dispatch) => {
     return response;
 }
 
+export const updateEvent = (payload, id) => async (dispatch) => {
+    const response = await csrfFetch(`/api/events/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify(payload)
+    })
+
+    const data = await response.json();
+    dispatch(putEvent(data));
+    return response;
+}
+
 //reducer
 const initialState = { entries: {}, isLoading: true };
 
@@ -48,9 +67,13 @@ const eventReducer = (state = initialState, action) => {
             })
             return newState;
         case ADD_EVENT:
-            const newState_add = {...state, entries: {...state.entries}}
-            newState_add.entries[action.event.id] = action.event
+            const newState_add = {...state, entries: {...state.entries}};
+            newState_add.entries[action.event.id] = action.event;
             return newState_add;
+        case PUT_EVENT:
+            const newState_put = {...state, entries: {...state.entries}};
+            newState_put.entries[action.event.id] = action.event;
+            return newState_put;
         default: 
             return state;
     }
