@@ -36,7 +36,7 @@ export const deleteTicket = (id) => {
 
 //thunk
 export const fetchTickets = (userId) => async (dispatch) => {
-    const response = await fetch(`api/tickets/${userId}/orders`);
+    const response = await fetch(`/api/tickets/${userId}/orders`);
     const tickets = await response.json();
     dispatch(loadTickets(tickets));
 }
