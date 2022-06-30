@@ -10,6 +10,8 @@ import Footer from "./components/Footer";
 import NewEvent from "./components/NewEvent";
 import EditEvent from "./components/EditEvent";
 import Order from "./components/Order";
+import NewOrder from "./components/NewOrder";
+import EditOrder from "./components/EditOrder";
 
 
 function App() {
@@ -34,11 +36,17 @@ function App() {
         <Route exact path='/events/new'>
           <NewEvent />
         </Route>
+        <Route exact path='/events/:id/register'>
+          <NewOrder />
+        </Route>
         <Route exact path='/events/:id/edit'>
           <EditEvent />
         </Route>
         <Route exact path='/events/:id'>
           <SingleEvent />
+        </Route>
+        <Route exact path='/:userId/orders/:ticketId/edit'>
+          <EditOrder />
         </Route>
         <Route exact path='/:userId/orders'>
           <Order isLoaded={isLoaded}/>

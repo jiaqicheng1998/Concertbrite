@@ -14,7 +14,7 @@ const validateTicket = [
         .isLength(10)
         .withMessage("Please provide a valid phone number"),
     check('need_parking')
-        .exists({ checkFalsy: true })
+        .isBoolean()
         .withMessage('Please specify if you need parking space'),
     handleValidationErrors
 ]

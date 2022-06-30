@@ -47,12 +47,12 @@ const NewEvent = () => {
 
     const event = useSelector(state => state.event.entries);
 
-    if (Object.values(event)[0] !== undefined) {
-        const id = Object.values(event)[0].id
-        return (
-            <Redirect to={`/events/${id}`} />
-        )
-    }
+    // if (Object.values(event)[0] !== undefined) {
+    //     const id = Object.values(event)[0].id
+    //     return (
+    //         <Redirect to={`/events/${id}`} />
+    //     )
+    // }
 
     return (
         <div className='form-container'>
