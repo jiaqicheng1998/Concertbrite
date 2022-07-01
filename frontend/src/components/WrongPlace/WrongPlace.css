@@ -1,0 +1,14 @@
+.wrong_pic {
+    height: 500px;
+    width: 800px;
+    background-position: center center;
+    background-size: auto 100%;
+    border-top-left-radius: 10px;
+}
+
+.wrong_page {
+    min-height: 560px;
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
