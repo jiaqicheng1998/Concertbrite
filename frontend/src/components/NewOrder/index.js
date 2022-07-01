@@ -47,6 +47,9 @@ const NewOrder = () => {
 
     return (
         <div className='get_ticket'>
+            {errors?.map(error => (
+                <li>{error}</li>
+            ))}
             <div className='get_ticket_left'>
                 <h2>{event.title}</h2>
                 <h2>{event.location}</h2>

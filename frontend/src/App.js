@@ -36,6 +36,9 @@ function App() {
         <Route exact path='/events/new'>
           <NewEvent />
         </Route>
+        <Route path='/events/:eventId/orders/:ticketId/edit'>
+          <EditOrder />
+        </Route>
         <Route exact path='/events/:id/register'>
           <NewOrder />
         </Route>
@@ -44,9 +47,6 @@ function App() {
         </Route>
         <Route exact path='/events/:id'>
           <SingleEvent />
-        </Route>
-        <Route exact path='/:userId/orders/:ticketId/edit'>
-          <EditOrder />
         </Route>
         <Route exact path='/:userId/orders'>
           <Order isLoaded={isLoaded}/>
