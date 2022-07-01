@@ -26,6 +26,7 @@
 
 #signup_button:hover {
     background-color: #3b82f6;
+    cursor: pointer;
 }
 
 .signup_unit {

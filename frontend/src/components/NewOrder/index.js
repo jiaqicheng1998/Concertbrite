@@ -32,7 +32,6 @@ const NewOrder = (isLoaded) => {
             phone: phone,
             need_parking: parking
         }
-        console.log(ticketInfo)
 
         const toCreateTicket = async () => {
             let res = await dispatch(writeTicket(ticketInfo)).catch(

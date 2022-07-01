@@ -19,7 +19,6 @@ const Order = ({ isLoaded }) => {
     }, [dispatch])
 
     const handleClick = (event, id) => {
-        console.log('delete this ticket?', id)
         dispatch(removeTicket(id))
     }
 
