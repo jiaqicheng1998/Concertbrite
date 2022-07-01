@@ -1,0 +1,47 @@
+.my_orders {
+    width: 1000px;
+    min-height: 520px;
+    padding-top: 40px;
+    margin: 0 auto;
+}
+
+.single_ticket {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.single_ticket:hover {
+    background-color:  rgba(0, 0, 0, 0.02);
+}
+
+.single_ticket_time {
+    width: 140px;
+    border-right: 1px solid #d1d5db;
+}
+
+.single_ticket_title_location {
+    width: 650px;
+    padding-left: 50px;
+}
+
+#single_ticket_location {
+    color: #a1a1aa;
+    margin-top: 5px;
+}
+
+#single_ticket_title {
+    padding-top: 5px;
+    font-size: 1.1rem;
+    margin-bottom: 0px;
+}
+
+#edit_ticket_span {
+    color: #E4837D;
+}
+
+#delete_ticket_span {
+    color: #E4837D;
+}

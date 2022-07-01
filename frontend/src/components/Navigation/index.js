@@ -1,10 +1,11 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import './Navigation.css';
 import logo from './logo.png'
+
 
 function Navigation({ isLoaded }) {
     const sessionUser = useSelector(state => state.session.user);
@@ -12,14 +13,18 @@ function Navigation({ isLoaded }) {
     let sessionLinks;
     if (sessionUser) {
         sessionLinks = (
-            <ProfileButton user={sessionUser} />
+            <div className='sessionLinks_right'>
+                <NavLink id="create_event" exact to='/events/new'>Create Event</NavLink>
+                <NavLink id="your_tickets" exact to={`/${sessionUser.id}/orders`}>Your Tickets</NavLink>
+                <ProfileButton user={sessionUser} />
+            </div>
         );
     } else {
         sessionLinks = (
             <>
                 <LoginFormModal />
                 <div className='signup'>
-                <NavLink to='/signup'>Sign Up</NavLink>
+                    <NavLink to='/signup'>Sign Up</NavLink>
                 </div>
             </>
         );
@@ -31,7 +36,7 @@ function Navigation({ isLoaded }) {
                 <NavLink exact to='/'><img className='logo' src={logo} /></NavLink>
             </div>
             <div className='ls_container'>
-            {isLoaded && sessionLinks}
+                {isLoaded && sessionLinks}
             </div>
         </nav>
     );

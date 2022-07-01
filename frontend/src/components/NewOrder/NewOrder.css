@@ -1,0 +1,78 @@
+.get_ticket {
+    min-height: 560px;
+    width: 800px;
+    margin: 0 auto;
+}
+
+.get_ticket_right label {
+    margin-top: 10px;
+}
+
+.get_ticket_content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 70px;
+}
+
+.get_ticket_right form {
+    display: flex;
+    flex-direction: column;
+}
+
+.radio_button {
+    width: 30px;
+    height: 30px;
+}
+
+#phone {
+    width: 300px;
+}
+
+.get_ticket_left h2 {
+    font-size: 1.5rem;
+}
+
+.image_container_ticket {
+    height: 300px;
+    width: 400px;
+    background-position: center center;
+    background-size: auto 100%;
+    border-radius: 10px;
+}
+
+.get_ticket_left span {
+    font-family: 'Poppins', sans-serif;
+    color: #991b1b;
+}
+
+#get_ticket_button {
+    position: absolute;
+    top: 520px;
+    background-color:#2563eb;
+    border: none;
+    width: 320px;
+    height: 50px;
+    border-radius: 8px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    box-shadow: 0px 0px 2px 1px rgba(123, 126, 198, 0.3);
+}
+
+#get_ticket_button:hover {
+    background-color: #3b82f6;
+}
+
+.get_ticket_left_text {
+    margin-bottom: 20px;
+}
+
+.radio_unit {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100px;
+}

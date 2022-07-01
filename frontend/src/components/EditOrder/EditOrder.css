@@ -1,0 +1,57 @@
+.edit_ticket {
+    min-height: 560px;
+    width: 800px;
+    margin: 0 auto;
+}
+
+.edit_ticket_content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 70px;
+}
+
+.edit_ticket_right label {
+    margin-top: 10px;
+}
+
+.edit_ticket_right form {
+    display: flex;
+    flex-direction: column;
+}
+
+#edit_phone {
+    width: 300px;
+}
+
+.edit_ticket_left h2 {
+    font-size: 1.5rem;
+}
+
+.edit_ticket_left span {
+    font-family: 'Poppins', sans-serif;
+    color: #991b1b;
+}
+
+#edit_ticket_button {
+    position: absolute;
+    top: 520px;
+    background-color:#2563eb;
+    border: none;
+    width: 320px;
+    height: 50px;
+    border-radius: 8px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    box-shadow: 0px 0px 2px 1px rgba(123, 126, 198, 0.3);
+}
+
+#edit_ticket_button:hover {
+    background-color: #3b82f6;
+}
+
+.edit_ticket_left_text {
+    margin-bottom: 20px;
+}

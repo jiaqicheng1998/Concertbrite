@@ -38,12 +38,12 @@ router.get('/', asyncHandler(async (req, res) => {
     return res.json(events);
 }));
 
-//return a single object
-router.get(`/:id(\\d+)`, asyncHandler(async (req, res) => {
-    const eventId = req.params.id;
-    const event = await Event.findByPk(eventId);
-    return res.json(event);
-}));
+// //return a single object
+// router.get(`/:id(\\d+)`, asyncHandler(async (req, res) => {
+//     const eventId = req.params.id;
+//     const event = await Event.findByPk(eventId);
+//     return res.json(event);
+// }));
 
 //post a new event, locate user in frontend
 router.post('/', requireAuth, validateEvent, asyncHandler(async (req, res) => {

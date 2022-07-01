@@ -1,0 +1,33 @@
+.profile-dropdown {
+    position: absolute;
+    border-radius: 15px;
+    background-color: white;
+    top: 50px;
+    right: 30px;
+    width: 160px;
+    height: 120px;
+    list-style-type: none;
+    box-shadow: 0px 4px 20px 4px rgba(0, 0, 0, 0.1);
+    padding: 0;
+}
+
+.profile_button {
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+    margin-left: 20px;
+    color: #E4837D;
+}
+
+.profile_button:hover{
+    cursor: pointer;
+}
+
+.profile-dropdown li {
+    font-size: 1rem;
+    margin: 10px 15px;
+}
+
+#logout:hover {
+    cursor: pointer;
+}

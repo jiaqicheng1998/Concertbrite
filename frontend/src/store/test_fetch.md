@@ -8,3 +8,20 @@ let event = {title: 'b2', description: 'sunset', img_url: 'https://fancycrave.co
 store.dispatch(eventActions.updateEvent(event, 35))
 
 store.dispatch(eventActions.removeEvent(39))
+
+// get all the tickets for one user
+store.dispatch(ticketActions.fetchTickets(1));
+
+//register a ticket
+
+let ticket = {user_id: 1, event_id: 2, phone: '4087071234', need_parking: true }
+store.dispatch(ticketActions.writeTicket(ticket))
+
+//update a ticket
+
+let ticket = {user_id: 1, event_id: 2, phone: '9077071234', need_parking: true }
+store.dispatch(ticketActions.updateTicket(ticket, 7))
+
+//delete a ticket
+
+store.dispatch(ticketActions.removeTicket(7))

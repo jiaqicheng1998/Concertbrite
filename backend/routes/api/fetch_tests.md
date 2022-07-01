@@ -27,3 +27,36 @@ fetch('/api/events/22', {
     "XSRF-TOKEN": `udZDOy6x-GWZsIPHoVCBWionKgLJz82IKaRU`
   },
 }).then(res => res.json()).then(data => console.log(data));
+
+//get tickets for a user
+fetch('/api/tickets/1/orders').then(res => res.json()).then(data => console.log(data));
+
+//register a ticket
+fetch('/api/tickets', {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "XSRF-TOKEN": `KKGb3L66-RW_qO1zNfA8f_7zNKVUMuZnrWlw`
+  },
+  body: JSON.stringify({ user_id: 1, event_id: 1, phone: "4081231234", need_parking: true })
+}).then(res => res.json()).then(data => console.log(data));
+
+
+//update a ticket
+fetch('/api/tickets/4', {
+  method: "PUT",
+  headers: {
+    "Content-Type": "application/json",
+    "XSRF-TOKEN": `KKGb3L66-RW_qO1zNfA8f_7zNKVUMuZnrWlw`
+  },
+  body: JSON.stringify({ user_id: 1, event_id: 1, phone: "1231231234", need_parking: true })
+}).then(res => res.json()).then(data => console.log(data));
+
+//delete a ticket
+fetch('/api/tickets/4', {
+  method: "DELETE",
+  headers: {
+    "Content-Type": "application/json",
+    "XSRF-TOKEN": `KKGb3L66-RW_qO1zNfA8f_7zNKVUMuZnrWlw`
+  },
+}).then(res => res.json()).then(data => console.log(data));

@@ -9,6 +9,10 @@ import SingleEvent from "./components/SingleEvent";
 import Footer from "./components/Footer";
 import NewEvent from "./components/NewEvent";
 import EditEvent from "./components/EditEvent";
+import Order from "./components/Order";
+import NewOrder from "./components/NewOrder";
+import EditOrder from "./components/EditOrder";
+import WrongPlace from "./components/WrongPlace";
 
 
 function App() {
@@ -31,14 +35,24 @@ function App() {
           <EventList />
         </Route>
         <Route exact path='/events/new'>
-          <NewEvent />
+          <NewEvent isLoaded={isLoaded}/>
+        </Route>
+        <Route path='/events/:eventId/orders/:ticketId/edit'>
+          <EditOrder isLoaded={isLoaded}/>
+        </Route>
+        <Route exact path='/events/:id/register'>
+          <NewOrder isLoaded={isLoaded}/>
         </Route>
         <Route exact path='/events/:id/edit'>
-          <EditEvent />
+          <EditEvent isLoaded={isLoaded}/>
         </Route>
         <Route exact path='/events/:id'>
           <SingleEvent />
         </Route>
+        <Route exact path='/:userId/orders'>
+          <Order isLoaded={isLoaded}/>
+        </Route>
+        <WrongPlace />
       </Switch>
       <Footer />
     </>

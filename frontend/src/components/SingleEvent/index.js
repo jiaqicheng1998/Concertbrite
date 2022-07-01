@@ -26,6 +26,10 @@ const SingleEvent = () => {
         history.push('/');
     }
 
+    const getTickets = () => {
+        history.push(`/events/${eventId}/register`)
+    }
+
     return (
         <div className='single_event'>
             <div className='event_container'>
@@ -45,7 +49,7 @@ const SingleEvent = () => {
                             </span>
                         </div>
                     )}
-                    <button>Get Tickets</button>
+                    <button onClick={getTickets}>Get Tickets</button>
                 </div>
             </div>
             <div className='detailed_info'>
