@@ -30,6 +30,20 @@ nav {
     line-height: 65px;
 }
 
+.demo {
+    padding: 0 20px;
+    height: 65px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    line-height: 65px;
+    color: #292524;
+}
+
+.demo:hover {
+    background-color: #f4f4f5;
+    cursor: pointer;
+}
+
 .signup a {
     font-weight: 500;
     font-size: 1rem;
@@ -56,6 +70,7 @@ nav {
 
 .login:hover {
     background-color: #f4f4f5;
+    cursor: pointer;
 }
 
 .sessionLinks_right {

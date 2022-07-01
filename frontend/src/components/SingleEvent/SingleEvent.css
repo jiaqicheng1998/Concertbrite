@@ -65,6 +65,7 @@
 
 .info_container_single button:hover {
     background-color: #3b82f6;
+    cursor: pointer;
 }
 
 .detailed_info {
