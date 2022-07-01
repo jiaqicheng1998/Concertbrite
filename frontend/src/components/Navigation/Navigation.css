@@ -57,3 +57,23 @@ nav {
 .login:hover {
     background-color: #f4f4f5;
 }
+
+.sessionLinks_right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#create_event, #your_tickets {
+    font-size: 16px;
+    font-weight: 500;
+    color: #292524;
+    padding: 0 20px;
+    height: 65px;
+    text-align: center;
+    line-height: 65px;
+}
+
+#create_event:hover, #your_tickets:hover {
+    background-color: #f4f4f5;
+}

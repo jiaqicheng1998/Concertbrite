@@ -13,11 +13,11 @@ function Navigation({ isLoaded }) {
     let sessionLinks;
     if (sessionUser) {
         sessionLinks = (
-            <>
+            <div className='sessionLinks_right'>
+                <NavLink id="create_event" exact to='/events/new'>Create Event</NavLink>
+                <NavLink id="your_tickets" exact to={`/${sessionUser.id}/orders`}>Your Tickets</NavLink>
                 <ProfileButton user={sessionUser} />
-                <NavLink exact to='/events/new'>Create Event</NavLink>
-                <NavLink exact to={`/${sessionUser.id}/orders`}>Your Tickets</NavLink>
-            </>
+            </div>
         );
     } else {
         sessionLinks = (

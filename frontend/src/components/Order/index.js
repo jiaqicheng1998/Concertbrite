@@ -38,7 +38,6 @@ const Order = () => {
                         <p id="single_ticket_location">{ele.Event.location}</p>
                     </div>
                     <div className='single_ticket_edit_delete'>
-                        <p>{ele.id}</p>
                         <NavLink to={`/events/${ele.Event.id}/orders/${ele.id}/edit`}>
                             <span id="edit_ticket_span">
                                 <i id="edit_event" className="fa-solid fa-pen-to-square" />

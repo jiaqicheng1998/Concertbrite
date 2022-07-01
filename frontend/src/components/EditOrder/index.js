@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { updateTicket } from '../../store/ticket';
 import { useParams } from 'react-router-dom';
+import './EditOrder.css'
 
 const EditOrder = () => {
     const dispatch = useDispatch();
@@ -41,35 +42,49 @@ const EditOrder = () => {
             {errors?.map((error, idx) => (
                 <li key={idx}>{error}</li>
             ))}
-            <div className='edit_ticket_left'>
-                <h2>{event.title}</h2>
-                <h2>{event.location}</h2>
-                <div className='image_container' style={{ backgroundImage: `url(${event.img_url})` }}></div>
-            </div>
-            <div className='edit_ticket_right'>
-                <form onSubmit={handleSubmit}>
-                    <label>phone</label>
-                    <input
-                        type='text'
-                        value={phone}
-                        onChange={(e) => { setPhone(e.target.value) }}
-                        name='phone'
-                    />
-                    <label>Need a parking?</label>
-                    <input
-                        type='radio'
-                        onChange={(e) => { setParking(true) }}
-                        name="need_parking"
-                        value={parking}
-                    />yes
-                    <input
-                        type='radio'
-                        onChange={(e) => { setParking(false) }}
-                        name="need_parking"
-                        value={parking}
-                    />no
-                    <button type='submit'>Submit</button>
-                </form>
+            <div className='edit_ticket_content'>
+                <div className='edit_ticket_left'>
+                    <div className='edit_ticket_left_text'>
+                        <h2>{event.title}</h2>
+                        <h2>{event.location}</h2>
+                        <span>{event.time.slice(0, 10)}</span>
+                    </div>
+                    <div className='image_container_ticket' style={{ backgroundImage: `url(${event.img_url})` }}></div>
+                </div>
+                <div className='edit_ticket_right'>
+                    <form onSubmit={handleSubmit}>
+                        <label>phone</label>
+                        <input
+                            id="edit_phone"
+                            type='text'
+                            value={phone}
+                            onChange={(e) => { setPhone(e.target.value) }}
+                            name='phone'
+                        />
+                        <label>Need a parking?</label>
+                        <div className='radio_unit'>
+                            <input
+                                className='radio_button'
+                                type='radio'
+                                onChange={(e) => { setParking(true) }}
+                                name="need_parking"
+                                value={parking}
+                            />
+                            <p>yes</p>
+                        </div>
+                        <div className='radio_unit'>
+                            <input
+                                className='radio_button'
+                                type='radio'
+                                onChange={(e) => { setParking(false) }}
+                                name="need_parking"
+                                value={parking}
+                            />
+                            <p>no</p>
+                        </div>
+                        <button id="edit_ticket_button" type='submit'>Edit Ticket</button>
+                    </form>
+                </div>
             </div>
         </div>
     )
