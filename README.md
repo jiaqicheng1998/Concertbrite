@@ -31,3 +31,21 @@
 * CREATE: loggedIn user can register a ticket for the event they want to go to.
 * UPDATE: A user can update the tickets they have registered.
 * DELETE: A user can delete the tickets they have registered.
+
+# Code Snippet
+* Use Redux reducer to dispatch the thunk action. Use async/await to determine whether the request is successful or not.
+
+        const toUpdateEvent = async () => {
+            let res = await dispatch(updateEvent(newEvent, eventId)).catch( //store it in variable
+                async (res) => {
+                    const data = await res.json();
+                    if (data && data.errors) {
+                        setErrors(data.errors)
+                    }
+                }
+            )
+
+            if (res) {
+                history.push("/")
+            }
+        }
