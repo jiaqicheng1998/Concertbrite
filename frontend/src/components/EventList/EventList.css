@@ -14,7 +14,7 @@
 }
 
 .eventCard {
-    height: 470px;
+    padding-bottom: 1px;
     width: 400px;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
@@ -27,21 +27,30 @@
 .info_container {
     margin: 10px 15px;
 }
+
 .eventCard h2 {
     color: #292524;
     font-size: 1.3rem;
     margin-bottom: 7px;
 }
 
-#time {
+.time-event {
     color: #991b1b;
     margin-top: 0px;
     margin-bottom: 5px;
 }
 
-#location {
+.location-event {
     color: #525252;
     margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.liked-event {
+    margin-top: 0px;
+    text-align: end;
+    margin-bottom: 0px;
+    color:#ce4040;
 }
 
 .eventCard:hover {

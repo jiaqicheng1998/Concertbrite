@@ -79,28 +79,29 @@ const EventList = () => {
             <div className='mainPage'>
                 <h1>Categories</h1>
                 <div className='categories-container'>
-                    <div className={showKpop ? "curr-selected" : "ind-tag"} onClick={showKpopButton}><div className='music-icon'><i class="fa-solid fa-headphones fa-lg" /></div>K-pop</div>
-                    <div className={showRock ? "curr-selected" : "ind-tag"} onClick={showRockButton}><div className='music-icon'><i class="fa-solid fa-headphones fa-lg" /></div>Rock and Roll</div>
-                    <div className={showSym ? "curr-selected" : "ind-tag"} onClick={showSymButton}><div className='music-icon'><i class="fa-solid fa-headphones fa-lg" /></div>Symphony</div>
-                    <div className={showHip ? "curr-selected" : "ind-tag"} onClick={showHipButton}><div className='music-icon'><i class="fa-solid fa-headphones fa-lg" /></div>Hip Hop</div>
-                    <div className={showPop ? "curr-selected" : "ind-tag"} onClick={showPopButton}><div className='music-icon'><i class="fa-solid fa-headphones fa-lg" /></div>Pop Music</div>
-                    <div className={showAll ? "curr-selected" : "ind-tag"} onClick={showAllButton}><div className='music-icon'><i class="fa-solid fa-headphones fa-lg" /></div>See All</div>
+                    <div className={showKpop ? "curr-selected" : "ind-tag"} onClick={showKpopButton}><div className='music-icon'><i className="fa-solid fa-headphones fa-lg" /></div>K-pop</div>
+                    <div className={showRock ? "curr-selected" : "ind-tag"} onClick={showRockButton}><div className='music-icon'><i className="fa-solid fa-headphones fa-lg" /></div>Rock and Roll</div>
+                    <div className={showSym ? "curr-selected" : "ind-tag"} onClick={showSymButton}><div className='music-icon'><i className="fa-solid fa-headphones fa-lg" /></div>Symphony</div>
+                    <div className={showHip ? "curr-selected" : "ind-tag"} onClick={showHipButton}><div className='music-icon'><i className="fa-solid fa-headphones fa-lg" /></div>Hip Hop</div>
+                    <div className={showPop ? "curr-selected" : "ind-tag"} onClick={showPopButton}><div className='music-icon'><i className="fa-solid fa-headphones fa-lg" /></div>Pop Music</div>
+                    <div className={showAll ? "curr-selected" : "ind-tag"} onClick={showAllButton}><div className='music-icon'><i className="fa-solid fa-headphones fa-lg" /></div>See All</div>
                 </div>
                 <h1>Popular Events</h1>
                 <div className='displayEvents'>
-                    {showKpop && Object.values(events).filter((event) => event.tag === 'K-pop').map(({ id, title, img_url, time, location }) => (
+                    {showKpop && Object.values(events).filter((event) => event.tag === 'K-pop').map(({ id, title, img_url, time, location, Likes }) => (
                         <NavLink to={`/events/${id}`} key={id}>
                             <div className='eventCard'>
                                 <div className='image_container' style={{ backgroundImage: `url(${img_url})` }}></div>
                                 <div className='info_container'>
                                     <h2>{title}</h2>
-                                    <p id='time'>{time.slice(0, 10)}</p>
-                                    <p id='location'>{location}</p>
+                                    <p className='time-event'>{time.slice(0, 10)}</p>
+                                    <p className='location-event'>{location}</p>
+                                    <p className='liked-event'><i className="fa-solid fa-heart"/> {Likes.length}</p>
                                 </div>
                             </div>
                         </NavLink>
                     ))}
-                    {showRock && Object.values(events).filter((event) => event.tag === 'Rock and Roll').map(({ id, title, img_url, time, location }) => (
+                    {showRock && Object.values(events).filter((event) => event.tag === 'Rock and Roll').map(({ id, title, img_url, time, location, Likes }) => (
                         <NavLink to={`/events/${id}`} key={id}>
                             <div className='eventCard'>
                                 <div className='image_container' style={{ backgroundImage: `url(${img_url})` }}></div>
@@ -108,11 +109,12 @@ const EventList = () => {
                                     <h2>{title}</h2>
                                     <p id='time'>{time.slice(0, 10)}</p>
                                     <p id='location'>{location}</p>
+                                    <p className='liked-event'><i className="fa-solid fa-heart"/> {Likes.length}</p>
                                 </div>
                             </div>
                         </NavLink>
                     ))}
-                    {showSym && Object.values(events).filter((event) => event.tag === 'Symphony').map(({ id, title, img_url, time, location }) => (
+                    {showSym && Object.values(events).filter((event) => event.tag === 'Symphony').map(({ id, title, img_url, time, location, Likes }) => (
                         <NavLink to={`/events/${id}`} key={id}>
                             <div className='eventCard'>
                                 <div className='image_container' style={{ backgroundImage: `url(${img_url})` }}></div>
@@ -120,11 +122,12 @@ const EventList = () => {
                                     <h2>{title}</h2>
                                     <p id='time'>{time.slice(0, 10)}</p>
                                     <p id='location'>{location}</p>
+                                    <p className='liked-event'><i className="fa-solid fa-heart"/> {Likes.length}</p>
                                 </div>
                             </div>
                         </NavLink>
                     ))}
-                    {showHip && Object.values(events).filter((event) => event.tag === 'Hip Hop').map(({ id, title, img_url, time, location }) => (
+                    {showHip && Object.values(events).filter((event) => event.tag === 'Hip Hop').map(({ id, title, img_url, time, location, Likes }) => (
                         <NavLink to={`/events/${id}`} key={id}>
                             <div className='eventCard'>
                                 <div className='image_container' style={{ backgroundImage: `url(${img_url})` }}></div>
@@ -132,11 +135,12 @@ const EventList = () => {
                                     <h2>{title}</h2>
                                     <p id='time'>{time.slice(0, 10)}</p>
                                     <p id='location'>{location}</p>
+                                    <p className='liked-event'><i className="fa-solid fa-heart"/> {Likes.length}</p>
                                 </div>
                             </div>
                         </NavLink>
                     ))}
-                    {showPop && Object.values(events).filter((event) => event.tag === 'Pop Music').map(({ id, title, img_url, time, location }) => (
+                    {showPop && Object.values(events).filter((event) => event.tag === 'Pop Music').map(({ id, title, img_url, time, location, Likes}) => (
                         <NavLink to={`/events/${id}`} key={id}>
                             <div className='eventCard'>
                                 <div className='image_container' style={{ backgroundImage: `url(${img_url})` }}></div>
@@ -144,11 +148,12 @@ const EventList = () => {
                                     <h2>{title}</h2>
                                     <p id='time'>{time.slice(0, 10)}</p>
                                     <p id='location'>{location}</p>
+                                    <p className='liked-event'><i className="fa-solid fa-heart"/> {Likes.length}</p>
                                 </div>
                             </div>
                         </NavLink>
                     ))}
-                    {showAll && Object.values(events).map(({ id, title, img_url, time, location }) => (
+                    {showAll && Object.values(events).map(({ id, title, img_url, time, location, Likes }) => (
                         <NavLink to={`/events/${id}`} key={id}>
                             <div className='eventCard'>
                                 <div className='image_container' style={{ backgroundImage: `url(${img_url})` }}></div>
@@ -156,6 +161,7 @@ const EventList = () => {
                                     <h2>{title}</h2>
                                     <p id='time'>{time.slice(0, 10)}</p>
                                     <p id='location'>{location}</p>
+                                    <p className='liked-event'><i className="fa-solid fa-heart"/> {Likes.length}</p>
                                 </div>
                             </div>
                         </NavLink>

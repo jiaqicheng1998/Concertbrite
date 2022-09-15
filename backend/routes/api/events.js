@@ -34,7 +34,7 @@ const validateEvent = [
 
 //return a list of event object
 router.get('/', asyncHandler(async (req, res) => {
-    const events = await Event.findAll();
+    const events = await Event.findAll({ include: 'Likes' });
     return res.json(events);
 }));
 
