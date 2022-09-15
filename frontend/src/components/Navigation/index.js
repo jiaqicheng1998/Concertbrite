@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
@@ -43,7 +43,7 @@ function Navigation({ isLoaded }) {
     return (
         <nav>
             <div className='logo_container'>
-                <NavLink exact to='/'><img className='logo' src={logo} /></NavLink>
+                <NavLink exact to='/'><img className='logo' src={logo} alt='logo' /></NavLink>
             </div>
             <div className='ls_container'>
                 {isLoaded && sessionLinks}

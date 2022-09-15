@@ -28,6 +28,10 @@ module.exports = (sequelize, DataTypes) => {
     time: {
       type: DataTypes.DATE, 
       allowNull: false
+    },
+    tag: {
+      type: DataTypes.STRING(50),
+      allowNull: false
     }
   }, {});
   Event.associate = function(models) {

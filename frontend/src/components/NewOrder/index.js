@@ -21,7 +21,7 @@ const NewOrder = (isLoaded) => {
 
     useEffect(() => {
         dispatch(fetchEvents());
-    }, [])
+    }, [dispatch])
     
     const handleSubmit = async (e) => {
         e.preventDefault();

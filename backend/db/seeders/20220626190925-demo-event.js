@@ -10,7 +10,8 @@ module.exports = {
         img_url_two: "https://dbkpop.com/wp-content/uploads/2018/04/GI-DLE_Dumdi_Dumdi_Members.jpg",
         location: "Warfield, San Francisco, CA",
         user_id: 1,
-        time: '2022-07-24'
+        time: '2022-07-24',
+        tag: 'K-pop'
       },
       {
         title:"LUXURY DISEASE TOUR by One Ok Rock",
@@ -19,7 +20,8 @@ module.exports = {
         img_url_two: "https://www.jame-world.com/media/image/2017-01/7522.jpg",
         location:"Fox Theater Oakland, Oakland, CA",
         user_id: 1,
-        time:"2022-10-19"
+        time:"2022-10-19",
+        tag: 'Rock and Roll'
       },
       {
         title:"THE ICE TOUR by Twenty One Pilots",
@@ -28,7 +30,8 @@ module.exports = {
         img_url_two: "https://www.nme.com/wp-content/uploads/2019/03/21-pilots-2.jpg",
         location:"Chase Center, San Francisco, CA",
         user_id: 2,
-        time:"2022-09-18"
+        time:"2022-09-18",
+        tag: 'Rock and Roll'
       },
       {
         title:"San Francisco Symphony - Chamber Music",
@@ -37,7 +40,8 @@ module.exports = {
         img_url_two: "https://bloximages.chicago2.vip.townnews.com/sfexaminer.com/content/tncms/assets/v3/editorial/a/4e/a4e2f7db-e1cd-5113-ad1a-3af58f56ddb4/628e64b136b0f.image.jpg",
         location:"Davies Symphony Hall, San Francisco, CA",
         user_id: 2,
-        time:"2022-07-16"
+        time:"2022-07-16",
+        tag: 'Symphony'
       },
       {
         title:"World's Hottest Tour by Bad Bunny",
@@ -46,7 +50,8 @@ module.exports = {
         img_url_two: "https://www.the360mag.com/wp-content/uploads/2022/03/wp-1648146506874.jpg",
         location:"RingCentral Coliseum, Oakland, CA",
         user_id: 3,
-        time:"2022-09-14"
+        time:"2022-09-14",
+        tag: 'Hip Hop'
       },
       {
         title:"Love on Tour by Harry Styles",
@@ -55,7 +60,8 @@ module.exports = {
         img_url_two: "https://assets.teenvogue.com/photos/62aa0f71d8e85d922e3f0820/16:9/w_2560%2Cc_limit/GettyImages-1398237845.jpg",
         location:"Madison Square Garden, New York, NY",
         user_id: 1,
-        time:"2022-08-20"
+        time:"2022-08-20",
+        tag: 'Pop Music'
       },
       {
         title:"Weekends With Adele",
@@ -64,7 +70,8 @@ module.exports = {
         img_url_two: "https://media.pitchfork.com/photos/6197cd242ea64fb7b368bb9e/4:3/w_2900,h_2175,c_limit/adeletakeaways.jpg",
         location:"Hyde Park, London, GB",
         user_id: 2,
-        time:"2022-07-20"
+        time:"2022-07-20",
+        tag: 'Pop Music'
       },
       {
         title:"All-American Road Show by Chris Stapleton",
@@ -73,7 +80,8 @@ module.exports = {
         img_url_two: "https://www.soundslikenashville.com/wp-content/uploads/2020/08/Chris-Stapleton-1598372405-1280x852.jpg",
         location:"Brandon Amphitheater, Brandon, MS",
         user_id: 1,
-        time:"2022-07-16"
+        time:"2022-07-16",
+        tag: 'Rock and Roll'
       },
       {
         title:"La Ultima Vuelta Tour by Daddy Yankee",
@@ -82,7 +90,8 @@ module.exports = {
         img_url_two: "https://www.rollingstone.com/wp-content/uploads/2022/03/Daddy-Yankee-credit-Issac-Reyes.jpg",
         location:"Oakland Arena, Oakland, CA",
         user_id: 1,
-        time:"2022-08-02"
+        time:"2022-08-02",
+        tag: 'Hip Hop'
       },
       {
         title:"MANIAC by Stray Kids",
@@ -91,7 +100,8 @@ module.exports = {
         img_url_two: "https://www.musicmundial.com/en/wp-content/uploads/2021/08/Stray-Kids-has-become-a-million-seller-artist-with-their-album-NOEASY-1140x801.jpg",
         location:"Oakland Arena, Oakland, CA",
         user_id: 2,
-        time:"2022-07-12"
+        time:"2022-07-12",
+        tag: 'K-pop'
       },
       {
         title:"ALL 4 NOTHING by Lauv",
@@ -100,7 +110,8 @@ module.exports = {
         img_url_two: "https://images.squarespace-cdn.com/content/v1/5fbe7daa085bf90c0eedde87/1607015860700-BTORRY74X89IYL29X2WH/Lauv-Drugs-and-the-internet.jpeg",
         location:"Greek Theatre - Berkeley, Berkeley, CA",
         user_id: 1,
-        time:"2022-09-15"
+        time:"2022-09-15",
+        tag: 'Pop Music'
       },
       {
         title:"Chromatica Ball Tour by Lady Gaga",
@@ -109,7 +120,8 @@ module.exports = {
         img_url_two: "https://static.onecms.io/wp-content/uploads/sites/20/2019/02/07/gettyimages-634608864.jpg",
         location:"Oracle Park, San Francisco, CA",
         user_id: 2,
-        time:"2022-09-08"
+        time:"2022-09-08",
+        tag: 'Pop Music'
       },
       {
         title:"WORLD TOUR 2022 by Maroon 5",
@@ -118,7 +130,8 @@ module.exports = {
         img_url_two: "https://i.etsystatic.com/8783110/r/il/df5b44/2556578569/il_fullxfull.2556578569_q82h.jpg",
         location:"Resch Center, Green Bay, WI",
         user_id: 1,
-        time:"2022-08-15"
+        time:"2022-08-15",
+        tag: 'Pop Music'
       },
       {
         title:"Lollapalooza with Metallica",
@@ -127,7 +140,8 @@ module.exports = {
         img_url_two: "https://www.soundz.nl/wp-content/uploads/2019/06/Metallica-Arena-11062019-7780.jpg",
         location:"Hutchinson Field at Grant Park, Chicago, IL",
         user_id: 3,
-        time:"2022-07-28"
+        time:"2022-07-28",
+        tag: 'Rock and Roll'
       },
       {
         title:"NEVER ENDING SUMMER TOUR by OneRepublic",
@@ -136,7 +150,8 @@ module.exports = {
         img_url_two: "https://stationerytrends.com/wp-content/uploads/2021/12/OneRepublic.jpeg",
         location:"Shoreline Amphitheatre, Mountain View, CA",
         user_id: 2,
-        time:"2022-08-17"
+        time:"2022-08-17",
+        tag: 'Rock and Roll'
       },
       {
         title:"Make It Go Quiet Tour by Girl in Red",
@@ -145,7 +160,8 @@ module.exports = {
         img_url_two: "https://diy-magazine.s3.amazonaws.com/d/diy/Artists/G/Girl-In-red/Girl-in-Red_-by-Chris-Almeida-1.png",
         location:"Bottom Lounge, Chicago, IL",
         user_id: 1,
-        time:"2022-07-28"
+        time:"2022-07-28",
+        tag: 'Pop Music'
       },
       {
         title:"Justice World Tour by Justin Bieber",
@@ -154,7 +170,8 @@ module.exports = {
         img_url_two: "https://media.gq.com/photos/56bcb218cdf2db6945d2ef93/4:3/w_2000,h_1500,c_limit/bieber-coverstory-square.jpg",
         location:"O2 Arena - London, London, GB",
         user_id: 3,
-        time:"2023-02-14"
+        time:"2023-02-14",
+        tag: 'Pop Music'
       },
       {
         title:"The Big Steppers Tour by Kendrick Lamar",
@@ -163,7 +180,8 @@ module.exports = {
         img_url_two: "https://www.billboard.com/wp-content/uploads/media/kendrick-lamar-blue-2017-live-1548.jpg",
         location:"Oakland Arena, Oakland, CA",
         user_id: 1,
-        time:"2022-08-31"
+        time:"2022-08-31",
+        tag: 'Hip Hop'
       },
       {
         title:"MCR TOUR by My Chemical Romance",
@@ -172,7 +190,8 @@ module.exports = {
         img_url_two:"https://media.pitchfork.com/photos/5dbb44b5b4386a00082869d6/4:3/w_1280,h_960,c_limit/My%20Chemical%20Romance%202.png",
         location:"Oakland Arena, Oakland, CA",
         user_id: 1,
-        time:"2022-10-05"
+        time:"2022-10-05",
+        tag: 'Rock and Roll'
       },
       {
         title:"After Hours Til Dawn Tour by The Weeknd",
@@ -181,7 +200,8 @@ module.exports = {
         img_url_two: "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F6%2F2020%2F03%2FWeeknd.jpg",
         location:"Levi's Stadium, Santa Clara, CA",
         user_id: 2,
-        time:"2022-08-27"
+        time:"2022-08-27",
+        tag: 'Pop Music'
       }
     ])
   },
