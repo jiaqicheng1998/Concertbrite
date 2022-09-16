@@ -74,3 +74,53 @@ a {
 body {
     margin: 0;
 }
+
+.categories-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 50px;
+    padding-top: 10px;
+}
+
+.ind-tag {
+    min-width: 310px;
+    margin-right: 15px;
+    border: 1px solid #eeedf2;
+    height: 50px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    background-color: #F8F7FA;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    color: #525252;
+    cursor: pointer;
+}
+
+.curr-selected {
+    min-width: 310px;
+    margin-right: 15px;
+    border: 1px solid #d8d7da;
+    height: 50px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    background-color: #F8F7FA;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #525252;
+    cursor: pointer;
+}
+
+.music-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    background-color: #FDF7F5;
+    color: #F05537;
+}
+

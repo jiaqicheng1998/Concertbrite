@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeTicket, fetchTickets } from '../../store/ticket'
 import './Order.css';
-import { NavLink, useHistory } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { restoreUser } from '../../store/session';
 import WrongPlace from '../WrongPlace';
 
@@ -16,7 +16,7 @@ const Order = ({ isLoaded }) => {
     useEffect(() => {
         restoreUser()
         dispatch(fetchTickets(userId))
-    }, [dispatch])
+    }, [dispatch, userId])
 
     const handleClick = (event, id) => {
         dispatch(removeTicket(id))

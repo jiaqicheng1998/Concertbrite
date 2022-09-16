@@ -12,7 +12,7 @@ const SingleEvent = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
         dispatch(fetchEvents());
-    }, []);
+    }, [dispatch]);
 
     const events = useSelector(state => state.event.entries);
     const user = useSelector(state => state.session.user);
@@ -72,7 +72,7 @@ const SingleEvent = () => {
                         some more recent work. The {event?.title} setlist may be slightly different
                         than the list of songs performed at other shows.
                     </p>
-                    <img src={event?.img_url_two} />
+                    <img src={event?.img_url_two} alt="img_two"/>
                     <h2> Public Transit</h2>
                     <p>
                         Public Transit to {event?.location} is preferred. You can choose subway or bus to
