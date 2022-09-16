@@ -48,8 +48,9 @@
 }
 
 #get_ticket_button {
-    position: absolute;
-    top: 520px;
+    /* position: absolute;
+    top: 520px; */
+    margin-top: 30px;
     background-color:#2563eb;
     border: none;
     width: 320px;
@@ -76,4 +77,10 @@
     align-items: center;
     justify-content: space-around;
     width: 100px;
+}
+
+.error-msg {
+    margin-bottom: 10px;
+    color: #BF2519;
+    font-family: 'Poppins', sans-serif;
 }

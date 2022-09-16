@@ -11,10 +11,10 @@ const router = express.Router();
 const validateTicket = [
     check('phone')
         .exists({ checkFalsy: true })
-        .isLength(10)
+        .isLength({min:10, max: 10})
         .withMessage("Please provide a valid phone number"),
     check('need_parking')
-        .isBoolean()
+        .exists({ checkFalsy: true })
         .withMessage('Please specify if you need parking space'),
     handleValidationErrors
 ]

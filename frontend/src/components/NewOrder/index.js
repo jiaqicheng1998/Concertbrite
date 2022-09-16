@@ -22,13 +22,13 @@ const NewOrder = (isLoaded) => {
     useEffect(() => {
         dispatch(fetchEvents());
     }, [dispatch])
-    
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setErrors([]);
         const ticketInfo = {
-            user_id: sessionUser.id,
-            event_id: Number(eventId),
+            user_id: sessionUser?.id,
+            event_id: parseInt(eventId),
             phone: phone,
             need_parking: parking
         }
@@ -54,9 +54,11 @@ const NewOrder = (isLoaded) => {
     return (
         isLoaded && sessionUser && tickets ? (
             <div className='get_ticket'>
-                {errors?.map(error => (
-                    <li>{error}</li>
-                ))}
+                <div className='error-msg'>
+                    {errors?.map((error, idx) => (
+                        <div key={idx}> ❌ {error}</div>
+                    ))}
+                </div>
                 <div className='get_ticket_content'>
                     <div className='get_ticket_left'>
                         <div className='get_ticket_left_text'>
@@ -75,6 +77,7 @@ const NewOrder = (isLoaded) => {
                                 value={phone}
                                 onChange={(e) => { setPhone(e.target.value) }}
                                 name='phone'
+                                placeholder='eg.1231231234'
                             />
                             <label>Need a parking?</label>
                             <div className='radio_unit'>
@@ -103,8 +106,8 @@ const NewOrder = (isLoaded) => {
                 </div>
             </div>
         )
-        :
-        (<WrongPlace />)
+            :
+            (<WrongPlace />)
     )
 }
 
