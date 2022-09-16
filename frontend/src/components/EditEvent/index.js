@@ -18,6 +18,7 @@ const EditEvent = ({ isLoaded }) => {
     const [img_url_two, setImg_url_two] = useState(currentEvent?.img_url_two);
     const [location, setLocation] = useState(currentEvent?.location);
     const [time, setTime] = useState(currentEvent?.time.slice(0,10));
+    const [tag, setTag] = useState(currentEvent?.tag)
     const [errors, setErrors] = useState([]);
 
     const handleSubmit = async (e) => {
@@ -29,7 +30,8 @@ const EditEvent = ({ isLoaded }) => {
             img_url,
             img_url_two,
             location,
-            time
+            time,
+            tag
         }
 
         const toUpdateEvent = async () => {
@@ -74,6 +76,16 @@ const EditEvent = ({ isLoaded }) => {
                             name='title'
                             placeholder='Be clear and descriptive.'
                         />
+                    </div>
+                    <div className='input_unit'>
+                        <label>Genre:</label>
+                        <select value={tag} onChange={(e) => setTag(e.target.value)}>
+                            <option value="K-pop">K-pop</option>
+                            <option value="Rock and Roll">Rock and Roll</option>
+                            <option value="Symphony">Symphony</option>
+                            <option value="Hip Hop">Hip Hop</option>
+                            <option value="Pop Music">Pop Music</option>
+                        </select>
                     </div>
                     <div className='input_unit'>
                         <label>

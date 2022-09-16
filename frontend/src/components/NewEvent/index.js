@@ -13,6 +13,7 @@ const NewEvent = ({ isLoaded }) => {
     const [img_url_two, setImg_url_two] = useState('');
     const [location, setLocation] = useState('');
     const [time, setTime] = useState('');
+    const [tag, setTag] = useState('Pop Music')
     const [errors, setErrors] = useState([]);
     const sessionUser = useSelector(state => state.session.user);
     const history = useHistory();
@@ -28,7 +29,8 @@ const NewEvent = ({ isLoaded }) => {
             img_url,
             img_url_two,
             location,
-            time
+            time,
+            tag
         }
 
         setTitle('');
@@ -37,6 +39,7 @@ const NewEvent = ({ isLoaded }) => {
         setImg_url_two('');
         setLocation('');
         setTime('');
+        setTag('Pop Music')
 
         const toCreateEvent = async () => {
             let res = await dispatch(writeEvent(newEvent)).catch(
@@ -82,6 +85,16 @@ const NewEvent = ({ isLoaded }) => {
                             name='title'
                             placeholder='Be clear and descriptive.'
                         />
+                    </div>
+                    <div className='input_unit'>
+                        <label>Genre:</label>
+                        <select value={tag} onChange={(e) => setTag(e.target.value)}>
+                            <option value="K-pop">K-pop</option>
+                            <option value="Rock and Roll">Rock and Roll</option>
+                            <option value="Symphony">Symphony</option>
+                            <option value="Hip Hop">Hip Hop</option>
+                            <option value="Pop Music">Pop Music</option>
+                        </select>
                     </div>
                     <div className='input_unit'>
                         <label>
