@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchEvents } from '../../store/event';
+import { loadLikes } from '../../store/likes';
 import { removeEvent } from '../../store/event';
 import './SingleEvent.css';
 import { NavLink, useHistory } from 'react-router-dom';
@@ -12,7 +13,8 @@ const SingleEvent = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
         dispatch(fetchEvents());
-    }, []);
+        dispatch(loadLikes())
+    }, [dispatch]);
 
     const events = useSelector(state => state.event.entries);
     const user = useSelector(state => state.session.user);
@@ -28,6 +30,10 @@ const SingleEvent = () => {
 
     const getTickets = () => {
         history.push(`/events/${eventId}/register`)
+    }
+
+    const addLike = async (e) => {
+        e.preventDefault();
     }
 
     return (
@@ -49,6 +55,7 @@ const SingleEvent = () => {
                             </span>
                         </div>
                     )}
+                    {user && <div className="like-this-event" onClick={addLike}>Like This Event</div>}
                     <button onClick={getTickets}>Get Tickets</button>
                 </div>
             </div>
@@ -72,7 +79,7 @@ const SingleEvent = () => {
                         some more recent work. The {event?.title} setlist may be slightly different
                         than the list of songs performed at other shows.
                     </p>
-                    <img src={event?.img_url_two} />
+                    <img src={event?.img_url_two} alt="pic_two" />
                     <h2> Public Transit</h2>
                     <p>
                         Public Transit to {event?.location} is preferred. You can choose subway or bus to

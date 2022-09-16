@@ -36,9 +36,9 @@ fetch('/api/tickets', {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
-    "XSRF-TOKEN": `KKGb3L66-RW_qO1zNfA8f_7zNKVUMuZnrWlw`
+    "XSRF-TOKEN": `DfKBmWYe-eb6OIXIAqkKj3ZtwVX2gNokSCuo`
   },
-  body: JSON.stringify({ user_id: 1, event_id: 1, phone: "4081231234", need_parking: true })
+  body: JSON.stringify({ user_id: 1, event_id: 2, phone: "4081231234", need_parking: true })
 }).then(res => res.json()).then(data => console.log(data));
 
 
@@ -59,4 +59,13 @@ fetch('/api/tickets/4', {
     "Content-Type": "application/json",
     "XSRF-TOKEN": `KKGb3L66-RW_qO1zNfA8f_7zNKVUMuZnrWlw`
   },
+}).then(res => res.json()).then(data => console.log(data));
+
+fetch('/api/eventlikes/:1/likes', {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "XSRF-TOKEN": `DfKBmWYe-eb6OIXIAqkKj3ZtwVX2gNokSCuo`
+  },
+  body: JSON.stringify({ user_id: 2 })
 }).then(res => res.json()).then(data => console.log(data));
