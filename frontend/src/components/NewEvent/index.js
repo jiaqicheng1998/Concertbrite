@@ -59,8 +59,6 @@ const NewEvent = ({ isLoaded }) => {
         await toCreateEvent();
     }
 
-    const event = useSelector(state => state.event.entries);
-
     return (
         isLoaded && sessionUser ? (
             <div className='form-container'>
