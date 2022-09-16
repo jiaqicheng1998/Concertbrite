@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect, useHistory } from 'react-router-dom';
-import { updateTicket, fetchTickets } from '../../store/ticket';
+import { useHistory } from 'react-router-dom';
+import { updateTicket } from '../../store/ticket';
 import { useParams } from 'react-router-dom';
 import './EditOrder.css'
 import { fetchEvents } from '../../store/event';
-import { restoreUser } from '../../store/session';
+// import { restoreUser } from '../../store/session';
 import WrongPlace from '../WrongPlace';
 
 const EditOrder = ({ isLoaded }) => {
@@ -15,26 +15,26 @@ const EditOrder = ({ isLoaded }) => {
     const events = useSelector(state => state.event.entries)
     const event = events[eventId]
     const ticketId = useParams().ticketId;
-    const tickets = useSelector(state => state.ticket.entries);
+    // const tickets = useSelector(state => state.ticket.entries);
     const [phone, setPhone] = useState("");
     const [parking, setParking] = useState(false);
     const [errors, setErrors] = useState([]);
     const sessionUser = useSelector(state => state.session.user);
 
     useEffect(() => {
-        restoreUser()
+        // restoreUser()
         dispatch(fetchEvents());
-    }, [])
+    }, [dispatch])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setErrors([]);
-        await dispatch(fetchTickets(sessionUser.id));
-        const ticket = tickets[ticketId];
+        // await dispatch(fetchTickets(sessionUser.id));
+        // const ticket = tickets[ticketId];
 
         const ticketInfo = {
-            user_id: ticket?.user_id,
-            event_id: ticket?.event_id,
+            user_id: sessionUser?.id,
+            event_id: eventId,
             phone: phone,
             need_parking: parking
         }
@@ -49,7 +49,8 @@ const EditOrder = ({ isLoaded }) => {
                 }
             )
             if (res) {
-                history.push(`/${ticket.user_id}/orders`)
+                history.push(`/${sessionUser.id}/orders`)
+                console.log(res)
             }
         }
 
@@ -59,9 +60,11 @@ const EditOrder = ({ isLoaded }) => {
     return (
         isLoaded && sessionUser ? (
             <div className='edit_ticket'>
-                {errors?.map((error, idx) => (
-                    <li key={idx}>{error}</li>
-                ))}
+                <div className='error-msg'>
+                    {errors?.map((error, idx) => (
+                        <div key={idx}> ❌ {error}</div>
+                    ))}
+                </div>
                 <div className='edit_ticket_content'>
                     <div className='edit_ticket_left'>
                         <div className='edit_ticket_left_text'>
@@ -80,6 +83,7 @@ const EditOrder = ({ isLoaded }) => {
                                 value={phone}
                                 onChange={(e) => { setPhone(e.target.value) }}
                                 name='phone'
+                                placeholder='eg.1231231234'
                             />
                             <label>Need a parking?</label>
                             <div className='radio_unit'>
