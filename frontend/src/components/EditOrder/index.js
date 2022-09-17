@@ -50,7 +50,6 @@ const EditOrder = ({ isLoaded }) => {
             )
             if (res) {
                 history.push(`/${sessionUser.id}/orders`)
-                console.log(res)
             }
         }
 
