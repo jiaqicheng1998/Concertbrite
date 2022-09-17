@@ -24,7 +24,7 @@ module.exports = {
       },
       need_parking: {
         allowNull: false,
-        type: Sequelize.BOOLEAN
+        type: Sequelize.STRING(50)
       },
       createdAt: {
         allowNull: false,

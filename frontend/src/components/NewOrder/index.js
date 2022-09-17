@@ -11,7 +11,7 @@ const NewOrder = (isLoaded) => {
     const dispatch = useDispatch();
     const history = useHistory();
     const [phone, setPhone] = useState('');
-    const [parking, setParking] = useState(false);
+    const [parking, setParking] = useState('');
     const [errors, setErrors] = useState([]);
     const eventId = useParams().id;
     const events = useSelector(state => state.event.entries)
@@ -84,7 +84,7 @@ const NewOrder = (isLoaded) => {
                                 <input
                                     className='radio_button'
                                     type='radio'
-                                    onChange={(e) => { setParking(true) }}
+                                    onChange={(e) => { setParking('need parking') }}
                                     name="need_parking"
                                     value={parking}
                                 />
@@ -94,7 +94,7 @@ const NewOrder = (isLoaded) => {
                                 <input
                                     className='radio_button'
                                     type='radio'
-                                    onChange={(e) => { setParking(false) }}
+                                    onChange={(e) => { setParking('no need') }}
                                     name="need_parking"
                                     value={parking}
                                 />

@@ -17,7 +17,7 @@ const EditOrder = ({ isLoaded }) => {
     const ticketId = useParams().ticketId;
     // const tickets = useSelector(state => state.ticket.entries);
     const [phone, setPhone] = useState("");
-    const [parking, setParking] = useState(false);
+    const [parking, setParking] = useState('');
     const [errors, setErrors] = useState([]);
     const sessionUser = useSelector(state => state.session.user);
 
@@ -90,7 +90,7 @@ const EditOrder = ({ isLoaded }) => {
                                 <input
                                     className='radio_button'
                                     type='radio'
-                                    onChange={(e) => { setParking(true) }}
+                                    onChange={(e) => { setParking('need parking') }}
                                     name="need_parking"
                                     value={parking}
                                 />
@@ -100,7 +100,7 @@ const EditOrder = ({ isLoaded }) => {
                                 <input
                                     className='radio_button'
                                     type='radio'
-                                    onChange={(e) => { setParking(false) }}
+                                    onChange={(e) => { setParking('no need') }}
                                     name="need_parking"
                                     value={parking}
                                 />

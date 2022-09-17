@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     need_parking: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.STRING(50),
       allowNull: false
     }
   }, {});
